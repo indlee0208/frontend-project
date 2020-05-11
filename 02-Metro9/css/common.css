@@ -1,0 +1,65 @@
+/*
+모든 요소의 바깥 여백(margin) : 0,
+안쪽 여백(padding) : 0
+*/
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* <ul>, <ol>의 자식인 <li> 앞쪽 장식 제거 */
+
+li {
+    list-style:none;
+}
+
+/* <a>의 밑줄 제거, 색상 변경 */
+
+a {
+    text-decoration:none;
+    color:#666;
+/*    color:#006633;*/
+}
+
+/* <img>와 글자 정렬이 아래(baseline)로 설정되어서 공백이 생김. 제거하기 위해서 vertical-align:top 혹은 middle. IE10 이하에서 <a> 된것들 테두리가 생기므로 제거 */
+
+img, iframe {
+    vertical-align:middle;
+    border:0;
+}
+
+input, select, button {
+    vertical-align: middle;
+}
+
+address, i, em {
+    font-style:normal;
+}
+
+body {
+    font-family:"NanumSquareRound", "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-serif;
+    font-weight:normal;
+/*    color:#525252;*/
+    color:#000;
+    font-size:14px;
+    line-height:1.65;
+    overflow-x:hidden;
+}
+html{
+    min-height: 100vh;
+}
+
+/* 리더기를 통해서만 제목이 읽혀지고 화면에서는 사라지게 */
+.blind {
+    position:absolute;
+    top:-99999px;
+}
+
+/* 모든 자식이 float된 부모 찾아주기 */
+.clearFix:after {
+    content:"";
+    display:block;
+    clear:both;
+}

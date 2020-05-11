@@ -1,0 +1,767 @@
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ececec;
+}
+
+.pcHeadTop #nav > li > a,
+.pcHeadTop .gnb > li > a {
+    color: #000;
+}
+
+.pcHeadTop .gnb > li > button {
+    background-image: url(../images/hamBtn_black.png);
+}
+
+
+
+
+
+
+
+/* 회원가입 폼 */
+
+#registerForm {}
+
+#container {
+    padding-top: 108px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#container > .title {
+    text-align: center;
+    padding-top: 100px;
+    margin-bottom: 0;
+}
+
+#container > .title > h2 {
+    font-size: 42px;
+    line-height: 100%;
+    margin-bottom: 50px;
+    font-weight: normal;
+}
+
+#container > .step {
+    display: table;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#container > .step > div {
+    display: table-cell;
+    height: 110px;
+    vertical-align: middle;
+    padding-left: 30px;
+    width: 25%;
+    background-color: #f5f5f5;
+    border: 1px solid #ececec;
+    border-bottom-color: #dbdbdb;
+}
+
+#container > .step > div:nth-child(2),
+#container > .step > div:nth-child(3),
+#container > .step > div:nth-child(4) {
+    border-left: none;
+}
+
+#container > .step > div.active {
+    background-color: #094fa3;
+    border: 1px solid #094fa3;
+}
+
+#container > .step > div > span,
+#container > .step > div > strong {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: #666;
+    line-height: 100%;
+}
+
+#container > .step > div > p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #666;
+    line-height: 100%;
+}
+
+#container > .step > div.active > span,
+#container > .step > div.active > strong,
+#container > .step > div.active > p {
+    color: #fff;
+}
+
+#container > .essential {
+    text-align: right;
+    font-size: 16px;
+    padding-right: 30px;
+    line-height: 100%;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+#container > .essential > em {
+    font-size: 18px;
+    color: #094fa3;
+}
+
+#container > .regTable {
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#container > .regTable > .row {
+    display: table-row;
+}
+
+#container > .regTable > .row > div {
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    color: #666;
+    padding: 12px 30px;
+}
+
+#container > .regTable > .row > .th {
+    border: 1px solid #ececec;
+    border-bottom: none;
+    width: 20%;
+    max-width: 240px;
+    padding-left: 40px;
+    padding-right: 0;
+    position: relative;
+    background-color: #f5f5f5;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#container > .regTable > .row > .th > em {
+    font-size: 18px;
+    color: #094fa3;
+    display: block;
+    float: right;
+    margin-right: 40px;
+}
+
+#container > .regTable > .row > .td {
+    border-top: 1px solid #ececec;
+}
+
+
+#container > .regTable > .row > .td input[type=text],
+#container > .regTable > .row > .td input[type=password] {
+    font-size: 16px;
+    line-height: 42px;
+    height: 44px;
+    padding-left: 15px;
+    color: #000;
+    border: 1px solid #bbb;
+    background-color: #fff;
+}
+
+
+#container > .regTable > .row > .td input[type=text] {
+    max-width: 300px;
+    width: 100%;
+}
+
+#container > .regTable > .row > .td button {
+    margin-left: 6px;
+    color: #fff;
+    border: 1px solid #31353a;
+    background-color: #31353a;
+    font-size: 14px;
+    line-height: 42px;
+    min-width: 110px;
+    height: 44px;
+    text-align: center;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+#container > .regTable > .row > .td input[type=password] {
+    max-width: 500px;
+    width: 100%;
+}
+
+#container > .regTable > .row > .pwd {
+    position: relative;
+}
+
+#container > .regTable > .row > .pwd > .pwdButton {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url(../images/pwdInfo.png) center center no-repeat;
+    margin-left: 16px;
+    vertical-align: middle;
+}
+
+#container > .regTable > .row > .pwd > .pwdInfo {
+    position: absolute;
+    top: 22px;
+    right: 170px;
+    padding: 30px;
+    border: 1px solid #555;
+    border-radius: 12px;
+    background-color: #fff;
+    width: 370px;
+    z-index: 1;
+    display: none;
+}
+
+#container > .regTable > .row > .pwd > .pwdInfo > .closeBtn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/closeBtn_black.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#container > .regTable > .row > .pwd > .pwdInfo > strong {
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+#container > .regTable > .row > .pwd > .pwdInfo > p {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 18px;
+}
+
+#container > .regTable > .row > .pwd > .pwdInfo > ul > li {
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    position: relative;
+    padding-left: 8px;
+}
+
+#container > .regTable > .row > .pwd > .pwdInfo > ul > li:before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 2px;
+    background-color: #3c3c3c;
+    top: 8px;
+    left: 0;
+}
+
+#container > .regTable > .row > .birth {
+    font-size: 16px;
+}
+
+#container > .regTable > .row > .birth > input[type=text] {
+    max-width: 100px;
+}
+
+#container > .regTable > .row > .address > .address1 {
+    margin-bottom: 6px;
+}
+
+#container > .regTable > .row > .address > input[type=text] {
+    max-width: 600px !important;
+}
+
+#container > .regTable > .row > .address > input[type=text]:nth-of-type(2) {
+    margin-top: 6px;
+}
+
+#container > .regTable > .row > .email > .emailId {
+    max-width: 233px;
+    padding-right: 33px;
+    position: relative;
+    display: inline-block;
+}
+
+#container > .regTable > .row > .email input[type=text] {
+    max-width: 200px;
+}
+
+#container > .regTable > .row > .email > .emailId > span {
+    display: block;
+    width: 33px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#container > .regTable > .row > .email > .email2 {
+    margin-right: 10px;
+}
+
+#container > .regTable > .row > .email > select {
+    width: 250px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 1.4em;
+    padding-left: 16px;
+    color: #666;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #666;
+}
+
+#container > .regTable > .row > .phone > select {
+    width: 122px;
+    background-color: #fff;
+    border: 1px solid #666;
+    color: #666;
+    height: 45px;
+    line-height: 45px;
+    font-size: 1.4em;
+    padding-left: 16px;
+    text-align: left;
+    float: left;
+}
+
+#container > .regTable > .row > .phone > span {
+    display: block;
+    float: left;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    width: 25px;
+    position: relative;
+}
+
+#container > .regTable > .row > .phone > span:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 5px;
+    height: 1px;
+    background-color: #dbdbdb;
+    top: 50%;
+    left: 50%;
+    margin-left: -2px;
+}
+
+#container > .regTable > .row > .phone > input[type=text] {
+    float: left;
+    max-width: 200px;
+}
+
+#container > .regTable > .row > .agree > div > p {
+    font-size: 16px;
+    color: #000;
+    display: inline-block;
+    line-height: 24px;
+    height: 24px;
+    width: 260px;
+}
+
+#container > .regTable > .row > .agree > div > label {
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    line-height: 24px;
+}
+
+#container > .regTable > .row > .agree > div > label > input {
+    width: 24px;
+    height: 24px;
+}
+
+#container > .regTable > .row > .agree > div > label > span {
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#container > .regTable > .row > .agree > div > label:nth-of-type(2) {
+    margin-left: 37px;
+}
+
+#container > .regTable > .row > .agree > div:nth-child(2) {
+    margin-top: 20px;
+}
+
+#container > .regTable > .row > .agree > .text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #094fa3;
+    line-height: 100%;
+}
+
+#container > .btnWrap {
+    text-align: center;
+    margin-top: 80px;
+}
+
+#container > .btnWrap > a {
+    margin: 0 3px;
+    display: inline-block;
+    height: 60px;
+    line-height: 58px;
+    font-size: 20px;
+    min-width: 200px;
+    padding: 0 20px;
+}
+
+#container > .btnWrap > .send {
+    color: #fff;
+    background-color: #3f7ac6;
+    border: 1px solid #3f7ac6;
+}
+
+#container > .btnWrap > .cancel {
+    color: #fff;
+    background-color: #666;
+    border: 1px solid #666;
+}
+
+
+
+
+
+
+
+
+/* footer */
+
+footer {
+    margin-top: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1199px) {}
+
+@media screen and (max-width:991px) {
+
+
+    #container > .title {
+        padding: 70px 0 0;
+        margin: 0 auto;
+    }
+
+    #container > .title > h2 {
+        font-size: 27px;
+        margin-bottom: 40px;
+    }
+
+    #container > .step {
+        margin-bottom: 0;
+    }
+
+    #container > .step > div {
+        width: 18%;
+        height: 70px;
+        text-align: center;
+        border-bottom-color: #ececec;
+        padding: 0;
+    }
+
+    #container > .step > div.active {
+        width: 46%;
+        text-align: left;
+        padding-left: 20px;
+        background-color: #094fa3;
+        border-color: #094fa3;
+    }
+
+    #container > .step > div > span {
+        font-size: 10px;
+    }
+
+    #container > .step > div > strong {
+        display: block;
+        font-size: 15px;
+        margin-top: 5px;
+    }
+
+    #container > .step > div > p {
+        display: none;
+    }
+
+    #container > .step > div.active > span {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    #container > .step > div.active > strong {
+        display: inline-block;
+        margin-top: 0;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    #container > .step > div.active > p {
+        display: block;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    #container > .essential {
+        font-size: 14px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    #container > .essential > em {
+        font-size: 16px;
+    }
+
+
+    #container > .regTable {
+        width: calc(100% - 15px);
+        margin: 0 auto;
+        display: block;
+        border-bottom-color: #ececec;
+    }
+
+    #container > .regTable > .row {
+        display: block;
+        padding-top: 10px;
+    }
+
+    #container > .regTable > .row:last-child {
+        padding-top: 0;
+        margin-top: 25px;
+    }
+    
+    #container > .regTable > .row:last-child:before {
+        content:"";
+        display:block;
+        width:calc(100% - 20px);
+        height:1px;
+        background-color:#ececec;
+        margin:0 auto 15px;
+    }
+
+    #container > .regTable > .row > div {
+        display: block;
+    }
+
+    #container > .regTable > .row > .th {
+        padding: 0 10px;
+        font-size: 13px;
+        height: 32px;
+        line-height: 32px;
+        border: none;
+        width: 100%;
+        background: none;
+    }
+
+    #container > .regTable > .row > .th > em {
+        float: none;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+    #container > .regTable > .row > .td {
+        padding: 0 10px;
+        border-bottom: 10px;
+        border: none;
+        width: 100%;
+        background: none;
+        height: auto;
+    }
+
+    #container > .regTable > .row > .td input[type=text],
+    #container > .regTable > .row > .td input[type=password] {
+        max-width: 100%;
+        height: 40px;
+        line-height: 38px;
+        font-size: 13px;
+        padding-left: 15px;
+        color: #000;
+        border: 1px solid #bbb;
+        background-color: #fff;
+    }
+
+    #container > .regTable > .row > .uId > div {
+        width: 100%;
+        position: relative;
+        padding-right: 150px;
+    }
+
+    #container > .regTable > .row > .uId > div > button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        height: 40px;
+        line-height: 38px;
+        padding: 0 20px;
+        min-width: 90px;
+        font-size: 13px;
+    }
+
+    #container > .regTable > .row > .pwd > .pwdButton,
+    #container > .regTable > .row > .pwd > .pwdInfo {
+        display: none;
+    }
+
+    #container > .regTable > .row > .birth > input[type=text] {
+        display: inline-block;
+        max-width: 20%;
+    }
+
+    #container > .regTable > .row > .address > .address1 {
+        width: 100%;
+        position: relative;
+        padding-right: 135px;
+    }
+
+    #container > .regTable > .row > .address > .address1 > button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        height: 40px;
+        line-height: 38px;
+        padding: 0 20px;
+        min-width: 90px;
+        font-size: 13px;
+    }
+
+    #container > .regTable > .row > .email > .emailId {
+        max-width: 100%;
+        display: block;
+        padding-right: 45px;
+    }
+
+    #container > .regTable > .row > .email > .emailId > .email1 {
+        max-width: 100%;
+    }
+
+    #container > .regTable > .row > .email > .emailId > span {
+        width: 45px;
+        font-size: 15px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    #container > .regTable > .row > .email > .email2 {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    #container > .regTable > .row > .email > select {
+        width: 100%;
+        height: 40px;
+        line-height: 30px;
+        font-size:13px;
+    }
+    
+    #container > .regTable > .row > .phone > select {
+        width:27%;
+        height:40px;
+        line-height:30px;
+        font-size:13px;
+    }
+    
+    #container > .regTable > .row > .phone > span {
+        width:6.5%;
+        height:40px;
+        line-height:40px;
+    }
+    
+    #container > .regTable > .row > .phone > input {
+        max-width:30% !important;
+    }
+    
+    #container > .regTable > .row > .agree {
+        text-align:right;
+    }
+    
+    #container > .regTable > .row > .agree > div > p {
+        float:left;
+        display:inline-block;
+        width:160px;
+        font-size:15px;
+        line-height:20px;
+        text-align:left;
+        height:auto;
+    }
+    
+    #container > .regTable > .row > .agree > div > label {
+        height:18px;
+        line-height:18px;
+    }
+    
+    #container > .regTable > .row > .agree > div > label > input {
+        width:18px;
+        height:18px;
+    }
+    
+    #container > .regTable > .row > .agree > div > label > span {
+        font-size:15px;
+    }
+    
+    #container > .regTable > .row > .agree > .text {
+        font-size:12px;
+        margin-top:17px;
+        text-align:left;
+        margin-bottom:25px;
+    }
+    
+    #container > .btnWrap {
+        margin-top:25px;
+    }
+    
+    #container > .btnWrap > a {
+        height:45px;
+        line-height:43px;
+        padding:0;
+        min-width:140px;
+        font-size:14px;
+    }
+    
+    
+    
+    
+    /* footer */
+    
+    footer {
+        margin-top:100px;
+    }
+
+
+
+
+}
+
+
+
+
+@media screen and (max-width:767px) {}

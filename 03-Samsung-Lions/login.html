@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:title" content="로그인">
+    <meta property="og:image" content="images/newsNotice_01.jpg">
+
+    <title>로그인</title>
+    <link rel="shortcut icon" href="images/sl_favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/login.js"></script>
+
+    <script>
+        function recaptcha_callback(response) {
+            if (response.length == 0) {
+                $(".loginLeft > .robot").css("display", "block");
+                $(".loginLeft > .loginBtn").removeClass("active").attr("disabled", true);
+
+                $(".loginInput").on("propertychange change keyup paste input", function() {
+                    if ($("#uId").val() == "" && $("#uPwd").val() == "") {
+                        $(".loginLeft > .robot").css("display", "none");
+                    } else if ($("#uId").val() != "" && $("#uPwd").val() != "") {
+                        $(".loginLeft > .robot").css("display", "block");
+                    }
+                });
+
+            } else {
+                $(".loginLeft > .robot").css("display", "none");
+                $(".loginLeft > .loginBtn").addClass("active").attr("disabled", false);
+
+                $(".loginInput").on("propertychange change keyup paste input", function() {
+                    if ($("#uId").val() == "" || $("#uPwd").val() == "") {
+                        $(".loginLeft > .loginBtn").removeClass("active").attr("disabled", true);
+                    } else if ($("#uId").val() != "" && $("#uPwd").val() != "") {
+                        $(".loginLeft > .robot").css("display", "none");
+                        $(".loginLeft > .loginBtn").addClass("active").attr("disabled", false);
+                    }
+                });
+
+            }
+        }
+
+
+
+        function recaptcha_expired() {
+            $(".loginLeft > .robot").css("display", "block");
+            $(".loginLeft > .loginBtn").removeClass("active").attr("disabled", true);
+
+            $(".loginInput").on("propertychange change keyup paste input", function() {
+                if ($("#uId").val() == "" || $("#uPwd").val() == "") {
+                    $(".loginLeft > .robot").css("display", "none");
+                    $(".loginLeft > .loginBtn").removeClass("active").attr("disabled", true);
+                } else if ($("#uId").val() != "" && $("#uPwd").val() != "") {
+                    $(".loginLeft > .robot").css("display", "block");
+                    $(".loginLeft > .loginBtn").removeClass("active").attr("disabled", true);
+                }
+            });
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="loginWrap">
+
+        <div class="trace">
+            <span class="home">HOME</span>
+            <span class="now">로그인</span>
+        </div>
+
+
+        <div class="loginBox">
+            <form>
+                <fieldset class="clearFix">
+                    <legend>로그인 양식</legend>
+
+                    <div class="loginLeft">
+                        <img src="images/login_logo.png" alt="삼성 라이온즈 로고">
+
+                        <input id="uId" class="loginInput" type="text" placeholder="아이디 입력">
+                        <input id="uPwd" class="loginInput" type="password" placeholder="비밀번호 입력">
+                        <div class="robot" style="display:none">
+                            <div class="g-recaptcha" data-sitekey="6Le3y-8UAAAAANP1fNIJLyJQEpSMNTrMYcwdxKCm" data-callback="recaptcha_callback" data-expired-callback="recaptcha_expired"></div>
+                        </div>
+                        <button type="button" class="loginBtn" disabled>로그인</button>
+                        <label for="saveId">
+                            <input type="checkbox" id="saveId">&nbsp;아이디 저장
+                        </label>
+
+                    </div>
+
+                    <div class="loginRight">
+                        <p>아이디나 비밀번호가 기억나지 않으세요?</p>
+
+                        <ul class="rightBtn1 clearFix">
+                            <li><a href="#">아이디 찾기</a></li>
+                            <li><a href="#">비밀번호 찾기</a></li>
+                            <li class="mRegister"><a href="#">회원가입하기</a></li>
+                        </ul>
+
+                        <p>아직 삼성라이온즈의 회원이 아니신가요?</p>
+
+                        <ul class="rightBtn2 clearFix">
+                            <li><a href="#">회원가입하기</a></li>
+                        </ul>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+
+</body></html>

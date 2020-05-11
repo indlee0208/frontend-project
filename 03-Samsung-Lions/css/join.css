@@ -1,0 +1,531 @@
+.mobile,
+.optionTitle {
+    display: none;
+}
+
+
+
+.joinWrap {
+    padding: 144px 0 100px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.trace {
+    position: relative;
+    width: 100%;
+    padding-bottom: 15px;
+    text-align: right;
+    border-bottom: 2px solid #0066b3;
+}
+
+.trace > span {
+    font-size: 14px;
+    color: #b7b7b7;
+}
+
+.trace > span.home {
+    padding: 0 10px 0 19px;
+    background-image: url(../images/login_home.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 13px;
+}
+
+.trace > span.now {
+    padding-left: 18px;
+    margin-left: -5px;
+    color: #0066b3;
+    background-image: url(../images/login_arrow.png);
+    background-position: 0 49%;
+    background-repeat: no-repeat;
+    background-size: auto 12px;
+}
+
+.joinBox {
+    width: 100%;
+}
+
+.joinBox > form {
+    width: 100%;
+}
+
+.joinBox fieldset {
+    border: none;
+    width: 91.25%;
+    margin: 0 auto;
+}
+
+.joinBox fieldset > legend {
+    text-indent: -99999px;
+}
+
+.joinBox fieldset > h4 {
+    width: 100%;
+    margin: 74px 0 17px;
+    font-size: 20px;
+    color: #222;
+    position: relative;
+}
+
+.joinBox fieldset > h4 > span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+}
+
+.joinBox fieldset > h4 > span > em {
+    margin-right: 5px;
+    color: #ff0000;
+    font-size: 20px;
+}
+
+
+
+.basicBox,
+.addBox {
+    border-top: 2px solid #e4e5e6;
+    border-bottom: 2px solid #e4e5e6;
+    padding-bottom: 30px;
+}
+
+.basicBox > div,
+.address2,
+.addBox > div {
+    height: auto;
+    font-size: 15px;
+    color: #222;
+    margin-top: 30px;
+    line-height: 25px;
+}
+
+.basicBox em {
+    display: block;
+    color: #0066b3;
+    font-size: 14px;
+    margin: 5px 0 15px;
+}
+
+.idBox > label,
+.pwBox > label,
+.uPw2 > label,
+.phoneBox > label,
+.confirmBox > label,
+.addressBox label,
+.emailBox > .emailTitle,
+.stadiumBox > label,
+.visitCountBox > label,
+.visitPriceBox > label,
+.visitPersonBox > label,
+.visitReasonBox > label,
+.cheerPlayerBox > label {
+    display: block;
+    width: 185px;
+    float: left;
+}
+
+.idBox > label > strong,
+.pwBox > label > strong,
+.uPw2 strong,
+.phoneBox strong,
+.confirmBox strong {
+    color: #ff0000;
+    margin-right: 5px;
+}
+
+.idBox > input,
+.pwBox > input,
+.uPw2 > input,
+.confirmBox > input,
+.address1 > input {
+    float: left;
+    width: 200px;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #58595b;
+}
+
+.idBox > .repeatId,
+.phoneBox > .requestBtn,
+.confirmBox > .confirmBtn,
+.address1 > .addrBtn {
+    display: inline-block;
+    width: 85px;
+    height: 25px;
+    margin-left: 10px;
+    background-color: #58595b;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.phoneBox > input {
+    float: left;
+    width: 56px;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #58595b;
+}
+
+.phoneBox > span {
+    display: block;
+    width: 16px;
+    float: left;
+    text-align: center;
+}
+
+.address2 > input {
+    float: left;
+    width: 590px;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #58595b;
+}
+
+.emailBox > input[type="text"] {
+    float: left;
+    width: 200px;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #58595b;
+    margin-right: 0;
+    padding: 0 5px;
+}
+
+.emailBox > span {
+    display: block;
+    width: 16px;
+    float: left;
+    text-align: center;
+}
+
+.emailBox > #uEmail2 {
+    float: left;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.emailBox > input[type="checkbox"] {
+    width: auto;
+    height: auto;
+    margin: 5px 5px 0 20px;
+}
+
+.emailBox > input[type="checkbox"] + label {
+    font-size: 14px;
+    color: #222;
+}
+
+.stadiumBox > #stadium {
+    float: left;
+    width: 100px;
+    height: 25px;
+}
+
+.countRadio > label,
+.priceRadio > label,
+.personCheck > label,
+.reasonCheck > label,
+.playerSelect > label {
+    float: left;
+    width: 150px;
+}
+
+.visitPriceBox .small {
+    display: block;
+    font-size: 10px;
+}
+
+.playerSelect > select {
+    display: none;
+    height:25px;
+}
+
+.playerSelect > select.active {
+    display: block;
+}
+
+.joinBtn {
+    text-align: center;
+}
+
+.joinBtn > ul {
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.joinBtn > ul > li {
+    float: left;
+    margin-right: 30px;
+}
+
+.joinBtn > ul > li > a {
+    display: block;
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+}
+
+.joinBtn > ul > .ok > a {
+    background-color: #0066b3;
+}
+
+.joinBtn > ul > .cancel {
+    margin-right: 0;
+}
+
+.joinBtn > ul > .cancel > a {
+    background-color: #58595b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1199px) {
+
+    .joinWrap {
+        width: 100%;
+        padding: 100px 10px 60px;
+    }
+
+    .basicBox {
+        border-bottom: none;
+    }
+
+    .basicBox em {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 8px;
+    }
+
+    .idBox > label,
+    .pwBox > label,
+    .uPw2 > label,
+    .phoneBox > label,
+    .confirmBox > label,
+    .addressBox label,
+    .emailBox > .emailTitle,
+    .stadiumBox > label,
+    .visitCountBox > label,
+    .visitPriceBox > label,
+    .visitPersonBox > label,
+    .visitReasonBox > label,
+    .cheerPlayerBox > label {
+        width: 25%;
+    }
+
+    .idBox > input,
+    .pwBox > input,
+    .uPw2 > input,
+    .confirmBox > input,
+    .address1 > input {
+        width: 60%;
+    }
+
+    .idBox > .repeatId,
+    .phoneBox > .requestBtn,
+    .confirmBox > .confirmBtn,
+    .address1 > .addrBtn {
+        width: calc(15% - 10px);
+    }
+
+    .optionTitle {
+        display: block;
+    }
+
+    .optionTitle > h4 {
+        width: 100%;
+        margin-top: 74px;
+        font-size: 20px;
+        color: #222;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e4e5e6;
+    }
+
+    .address2 > input {
+        width: 65%;
+    }
+
+    .emailBox > input[type="text"] {
+        width: 11%;
+    }
+
+    .joinBtn {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .joinBtn > ul > li > a {
+        font-size: 15px;
+    }
+
+    .stadiumBox > label,
+    .visitCountBox > label,
+    .visitPriceBox > label,
+    .visitPersonBox > label,
+    .visitReasonBox > label,
+    .cheerPlayerBox > label {
+        height: 50px;
+    }
+
+
+}
+
+
+
+
+
+@media screen and (max-width:991px) {
+
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .joinWrap {
+        padding: 100px 10px 40px;
+    }
+
+    .trace {
+        padding-bottom: 10px;
+    }
+
+    .trace > span {
+        font-size: 10px;
+    }
+
+    .trace > span.home {
+        padding-right: 6px;
+        background-size: contain;
+    }
+
+    .trace > span.now {
+        padding-left: 14px;
+        background-size: contain;
+        margin-left: -2px;
+    }
+
+    .joinBox fieldset > h4 {
+        margin: 35px 0 10px;
+    }
+
+    .joinBox fieldset > h4 > .mobile {
+        position: inherit;
+        font-size: 20px;
+        color: #0066b3;
+    }
+
+    .idBox > label,
+    .pwBox > label,
+    .uPw2 > label,
+    .phoneBox > label,
+    .confirmBox > label,
+    .addressBox label,
+    .emailBox > .emailTitle {
+        width: 35%;
+        font-size: 13px;
+    }
+
+    .idBox > input,
+    .pwBox > input,
+    .uPw2 > input,
+    .confirmBox > input,
+    .address1 > input {
+        width: 40%;
+    }
+
+    .idBox > .repeatId,
+    .phoneBox > .requestBtn,
+    .confirmBox > .confirmBtn,
+    .address1 > .addrBtn {
+        width: calc(25% - 10px);
+        font-size: 12px;
+    }
+
+    .phoneBox > input:first-of-type {
+        width: calc(12% - 9px);
+    }
+    
+    .phoneBox > input:nth-of-type(2),
+    .phoneBox > input:nth-of-type(3) {
+        width: calc(14% - 9px);
+    }
+
+    .phoneBox > span {
+        width: 13px;
+        font-size:13px;
+    }
+
+    .emailBox > input[type="text"]:first-of-type {
+        width: 25%;
+    }
+
+    .emailBox > input[type="text"]:nth-of-type(2) {
+        width: 34%;
+    }
+
+    .emailBox > #uEmail2 {
+        float: none;
+        display: inline-block;
+        margin-left: calc(55% + 16px);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: calc(45% - 16px);
+    }
+
+    .joinBtn > ul {
+        width: 100%;
+    }
+
+    .joinBtn > ul > li {
+        margin-right: 5%;
+        width: 47.5%;
+    }
+
+    .joinBtn > ul > li > a {
+        width: 100%;
+    }
+
+    .stadiumBox > label,
+    .visitCountBox > label,
+    .visitPriceBox > label,
+    .visitPersonBox > label,
+    .visitReasonBox > label,
+    .cheerPlayerBox > label {
+        width: 45%;
+        font-size: 13px;
+    }
+
+    .visitCountBox > label,
+    .visitPriceBox > label,
+    .visitPersonBox > label,
+    .visitReasonBox > label {
+        height: 150px;
+    }
+
+}

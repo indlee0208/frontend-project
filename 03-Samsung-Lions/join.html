@@ -1,0 +1,631 @@
+<!-- 반응형 만들기. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:title" content="회원가입">
+    <meta property="og:image" content="images/newsNotice_01.jpg">
+
+    <title>회원가입</title>
+    <link rel="shortcut icon" href="images/sl_favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/join.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/join.js"></script>
+
+</head>
+
+<body>
+
+    <div class="joinWrap">
+
+        <div class="trace">
+            <span class="home">HOME</span>
+            <span class="now">회원가입</span>
+        </div>
+
+
+        <div class="joinBox">
+            <form>
+                <fieldset class="basicInfo clearFix">
+                    <legend>기본정보</legend>
+
+                    <h4>
+                        <strong class="pc">기본정보</strong>
+
+                        <span class="pc">
+                            <em class="pc">*</em>&nbsp;
+                            는 필수 입력항목입니다.
+                        </span>
+
+                        <span class="mobile">
+                            * 필수 입력항목
+                        </span>
+                    </h4>
+
+                    <div class="basicBox">
+
+                        <div>
+                            <div class="idBox">
+                                <label for="uId">
+                                    <strong>*</strong>아이디
+                                </label>
+
+                                <input type="text" id="uId">
+
+                                <span class="repeatId">
+                                    중복확인
+                                </span>
+                            </div>
+
+                            <em>
+                                * 아이디는 영소문자, 숫자 포함 6자 이상을 입력해주세요.
+                            </em>
+                        </div>
+
+                        <div>
+
+                            <div class="pwBox clearFix">
+                                <label for="uPw">
+                                    <strong>*</strong>비밀번호
+                                </label>
+
+                                <input type="password" id="uPw">
+                            </div>
+
+                            <em>
+                                * 비밀번호는 영소문자, 숫자, 특수문자(`~!@#$%^&*|\'";:/?) 포함 8자 이상을 입력해주세요.
+                            </em>
+
+                        </div>
+
+                        <div class="uPw2 clearFix">
+
+                            <label for="uPw2">
+                                <strong>*</strong>비밀번호 확인
+                            </label>
+
+                            <input type="password" id="uPw2">
+
+                        </div>
+
+                        <div class="phoneBox clearFix">
+
+                            <label for="phone">
+                                <strong>*</strong>휴대전화번호
+                            </label>
+
+                            <input type="text" id="phone" maxlength="3">
+
+                            <span>-</span>
+
+                            <input type="text" maxlength="4">
+
+                            <span>-</span>
+
+                            <input type="text" maxlength="4">
+
+                            <span class="requestBtn">인증요청</span>
+
+                        </div>
+
+                        <div>
+
+                            <div class="confirmBox">
+
+                                <label for="confirmNum">
+                                    <strong>*</strong>인증번호
+                                </label>
+
+                                <input type="text" id="confirmNum" maxlength="6">
+
+                                <span class="confirmBtn">
+                                    인증확인
+                                </span>
+
+                            </div>
+
+                            <em>
+                                * 인증번호 입력 후 ‘인증확인’ 버튼을 클릭해주세요.
+                            </em>
+
+                        </div>
+
+                        <div class="optionTitle">
+
+                            <h4>선택 입력항목</h4>
+
+                        </div>
+
+                        <div class="addressBox clearFix">
+
+                            <div class="address1">
+
+                                <label for="uAddr">주소</label>
+
+                                <input type="text" id="uAddr" disabled>
+
+                                <span class="addrBtn" onclick="sample2_execDaumPostcode()">주소찾기</span>
+
+                            </div>
+
+                            <div class="address2">
+
+                                <label>
+                                    &nbsp;
+                                    <span class="blind">추가주소</span>
+                                </label>
+
+                                <input type="text" title="추가주소" id="uAddr2">
+
+                            </div>
+
+
+
+
+                            <!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
+                            <div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+                                <img src="http://t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+                            </div>
+
+                            <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+                            <script>
+                                // 우편번호 찾기 화면을 넣을 element
+                                var element_layer = document.getElementById('layer');
+
+                                function closeDaumPostcode() {
+                                    // iframe을 넣은 element를 안보이게 한다.
+                                    element_layer.style.display = 'none';
+                                }
+
+                                function sample2_execDaumPostcode() {
+                                    new daum.Postcode({
+                                        oncomplete: function(data) {
+                                            // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                                            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                                            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                                            var addr = ''; // 주소 변수
+                                            var extraAddr = ''; // 참고항목 변수
+
+                                            //해당 주소 값을 가져온다.
+                                            addr = data.roadAddress;
+
+
+                                            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                                            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                                            if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+                                                extraAddr += data.bname;
+                                            }
+                                            // 건물명이 있고, 공동주택일 경우 추가한다.
+                                            if (data.buildingName !== '' && data.apartment === 'Y') {
+                                                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                                            }
+                                            // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                                            if (extraAddr !== '') {
+                                                extraAddr = ' (' + extraAddr + ')';
+                                            }
+                                            
+
+
+                                            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                                            document.getElementById("uAddr1").value = addr + extraAddr;
+                                            // 커서를 상세주소 필드로 이동한다.
+                                            document.getElementById("uAddr2").focus();
+
+                                            // iframe을 넣은 element를 안보이게 한다.
+                                            // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                                            element_layer.style.display = 'none';
+                                        },
+                                        width: '100%',
+                                        height: '100%',
+                                        maxSuggestItems: 5
+                                    }).embed(element_layer);
+
+                                    // iframe을 넣은 element를 보이게 한다.
+                                    element_layer.style.display = 'block';
+
+                                    // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+                                    initLayerPosition();
+                                }
+
+                                // 브라우저의 크기 변경에 따라 레이어를 가운데로 이동시키고자 하실때에는
+                                // resize이벤트나, orientationchange이벤트를 이용하여 값이 변경될때마다 아래 함수를 실행 시켜 주시거나,
+                                // 직접 element_layer의 top,left값을 수정해 주시면 됩니다.
+                                function initLayerPosition() {
+                                    var width = 300; //우편번호서비스가 들어갈 element의 width
+                                    var height = 400; //우편번호서비스가 들어갈 element의 height
+                                    var borderWidth = 5; //샘플에서 사용하는 border의 두께
+
+                                    // 위에서 선언한 값들을 실제 element에 넣는다.
+                                    element_layer.style.width = width + 'px';
+                                    element_layer.style.height = height + 'px';
+                                    element_layer.style.border = borderWidth + 'px solid';
+                                    // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+                                    element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width) / 2 - borderWidth) + 'px';
+                                    element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height) / 2 - borderWidth) + 'px';
+                                }
+                            </script>
+
+
+
+
+                        </div>
+
+                        <div>
+
+                            <div class="emailBox clearFix">
+
+                                <label for="uEmail1" class="emailTitle">
+                                    이메일주소
+                                </label>
+
+                                <input type="text" id="uEmail1" title="이메일 앞자리">
+
+                                <span>@</span>
+
+                                <input type="text" title="이메일 뒷자리 주소" class="uEmailURI">
+
+                                <label for="uEmail2" class="blind">
+                                    이메일 주소
+                                </label>
+
+                                <select id="uEmail2">
+                                    <option value="">직접입력</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="korea.com">korea.com</option>
+                                </select>
+
+                                <input type="checkbox" id="emailAgree" class="pc">
+
+                                <label for="emailAgree" class="pc">이메일 수신 동의</label>
+
+                            </div>
+                            
+                            <em>
+                                * 이메일은 추후 아이디/비밀번호를 찾기 시 사용되니, 실제로 사용하시는 ‘이메일’을 기입해주세요.
+                            </em>
+
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <fieldset class="addInfo">
+
+                    <legend>추가정보</legend>
+
+                    <h4>
+                        <strong>추가정보</strong>
+                    </h4>
+
+                    <div class="addBox">
+
+                        <div class="stadiumBox clearFix">
+
+                            <label for="stadium">
+                                주 방문구장
+                            </label>
+
+                            <select id="stadium">
+                                <option value="none">선택안됨</option>
+                                <option value="daegu">대구</option>
+                                <option value="pohang">포항</option>
+                                <option value="jamsil">잠실</option>
+                                <option value="gocheok">고척</option>
+                                <option value="munhak">문학</option>
+                                <option value="changwon">창원</option>
+                                <option value="suwon">수원</option>
+                                <option value="gwangju">광주</option>
+                                <option value="wallmyeong">월명</option>
+                                <option value="daejeon">대전</option>
+                                <option value="cheongju">청주</option>
+                                <option value="sajik">사직</option>
+                                <option value="munsu">문수</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="visitCountBox clearFix">
+
+                            <label for="visitCount">
+                                연간 구장방문횟수
+                            </label>
+                            
+                            <input type="text" id="visitCount" class="blind">
+
+                            <div class="countRadio">
+
+                                <label for="under3">
+                                    <input type="radio" value="under3" id="under3" name="visitCount">&nbsp;3회 이하
+                                </label>
+
+                                <label for="from3to10">
+                                    <input type="radio" value="from3to10" id="from3to10" name="visitCount">&nbsp;3회~10회
+                                </label>
+
+                                <label for="from11to20">
+                                    <input type="radio" value="from11to20" id="from11to20" name="visitCount">&nbsp;11회~20회
+                                </label>
+
+                                <label for="from21to30">
+                                    <input type="radio" value="from21to30" id="from21to30" name="visitCount">&nbsp;21~30회
+                                </label>
+
+                                <label for="over30">
+                                    <input type="radio" value="over30" id="over30" name="visitCount">&nbsp;30회 이상
+                                </label>
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+                        <div class="visitPriceBox clearFix">
+
+                            <label for="visitPrice">
+                                방문 시 지출금액
+                                <span class="small">(티켓 금액 포함)</span>
+                            </label>
+                            
+                            <input type="text" id="visitPrice" class="blind">
+
+                            <div class="priceRadio">
+
+                                <label for="under10k">
+                                    <input type="radio" value="under10k" id="under10k" name="visitPrice">&nbsp;1만원 이하
+                                </label>
+
+                                <label for="from10kto30k">
+                                    <input type="radio" value="from10kto30k" id="from10kto30k" name="visitPrice">&nbsp;1만원~3만원
+                                </label>
+
+                                <label for="from30kto50k">
+                                    <input type="radio" value="from30kto50k" id="from30kto50k" name="visitPrice">&nbsp;3만원~5만원
+                                </label>
+
+                                <label for="from50kto100k">
+                                    <input type="radio" value="from50kto100k" id="from50kto100k" name="visitPrice">&nbsp;5만원~10만원
+                                </label>
+
+                                <label for="over100k">
+                                    <input type="radio" value="over100k" id="over100k" name="visitPrice">&nbsp;10만원 이상
+                                </label>
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                        <div class="visitPersonBox clearFix">
+
+                            <label for="visitPerson">
+                                동행유형
+                            </label>
+                            
+                            <input type="text" id="visitPerson" class="blind">
+
+
+                            <div class="personCheck">
+
+                                <label for="person01">
+                                    <input type="checkbox" value="family" id="person01" name="visitPerson">&nbsp;가족
+                                </label>
+
+                                <label for="person02">
+                                    <input type="checkbox" value="couple" id="person02" name="visitPerson">&nbsp;연인
+                                </label>
+
+                                <label for="person03">
+                                    <input type="checkbox" value="friend" id="person03" name="visitPerson">&nbsp;친구
+                                </label>
+
+                                <label for="person04">
+                                    <input type="checkbox" value="alone" id="person04" name="visitPerson">&nbsp;혼자
+                                </label>
+
+                                <label for="person05">
+                                    <input type="checkbox" value="worker" id="person05" name="visitPerson">&nbsp;직장동료
+                                </label>
+
+                                <label for="person06">
+                                    <input type="checkbox" value="etc" id="person06" name="visitPerson">&nbsp;기타
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+                        <div class="visitReasonBox clearFix">
+
+                            <label for="visitReason">
+                                야구장을 찾는 이유
+                            </label>
+                            
+                            <input type="text" id="visitReason" class="blind">
+
+
+                            <div class="reasonCheck">
+
+                                <label for="reason01">
+                                    <input type="checkbox" value="cheerHome" id="reason01" name="visitReason">&nbsp;홈팀 응원
+                                </label>
+
+                                <label for="reason02">
+                                    <input type="checkbox" value="stressOut" id="reason02" name="visitReason">&nbsp;스트레스 해소
+                                </label>
+
+                                <label for="reason03">
+                                    <input type="checkbox" value="eat" id="reason03" name="visitReason">&nbsp;먹는 즐거움
+                                </label>
+
+                                <label for="reason04">
+                                    <input type="checkbox" value="coupleDate" id="reason04" name="visitReason">&nbsp;데이트
+                                </label>
+
+                                <label for="reason05">
+                                    <input type="checkbox" value="etc" id="reason05" name="visitReason">&nbsp;기타
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="cheerPlayerBox">
+
+                            <label for="cheerPlayer">
+                                응원하는 선수
+                            </label>
+                            
+                            <input type="text" id="cheerPlayer" class="blind">
+
+
+                            <div class="playerSelect">
+
+                                <label for="player01">
+                                    <input type="radio" value="pitcher" id="player01" name="playerSelect">&nbsp;투수
+                                </label>
+
+                                <label for="player02">
+                                    <input type="radio" value="batter" id="player02" name="playerSelect">&nbsp;타자
+                                </label>
+
+                                <select id="pleaseSelect" class="active">
+                                    <option>투수와 타자 중 선택해 주세요.</option>
+                                </select>
+
+                                <select id="pitcher">
+                                    <option value="none">선택안됨</option>
+                                    <option value="45">권오준(45)</option>
+                                    <option value="1">윤성환(1)</option>
+                                    <option value="2">우규민(2)</option>
+                                    <option value="29">백정현(29)</option>
+                                    <option value="26">장필준(26)</option>
+                                    <option value="17">김대우(17)</option>
+                                    <option value="57">임현준(57)</option>
+                                    <option value="11">정인욱(11)</option>
+                                    <option value="20">이승현(20)</option>
+                                    <option value="102">이재익(102)</option>
+                                    <option value="56">최채흥(56)</option>
+                                    <option value="113">안도원(113)</option>
+                                    <option value="23">이수민(23)</option>
+                                    <option value="61">홍정우(61)</option>
+                                    <option value="43">장지훈(43)</option>
+                                    <option value="40">최지광(40)</option>
+                                    <option value="48">김시현(48)</option>
+                                    <option value="15">양창섭(15)</option>
+                                    <option value="19">김용하(19)</option>
+                                    <option value="25">김윤수(25)</option>
+                                    <option value="106">박용민(106)</option>
+                                    <option value="109">맹성주(109)</option>
+                                    <option value="104">김준우(104)</option>
+                                    <option value="46">원태인(46)</option>
+                                    <option value="108">서장민(108)</option>
+                                    <option value="39">벤 라이블리(39)</option>
+                                    <option value="21">오승환(21)</option>
+                                    <option value="37">노성호(37)</option>
+                                    <option value="111">이상민(111)</option>
+                                    <option value="123">김성한(123)</option>
+                                    <option value="28">임대한(28)</option>
+                                    <option value="54">구준범(54)</option>
+                                    <option value="41">황동재(41)</option>
+                                    <option value="49">허윤동(49)</option>
+                                    <option value="30">홍원표(30)</option>
+                                    <option value="64">이승민(64)</option>
+                                    <option value="101">박주혁(101)</option>
+                                    <option value="119">조경원(119)</option>
+                                    <option value="112">한연욱(112)</option>
+                                    <option value="4">뷰캐넌(4)</option>
+                                </select>
+
+                                <select id="batter">
+                                    <option value="none">선택안됨</option>
+                                    <option value="47">강민호(47)</option>
+                                    <option value="12">김민수(12)</option>
+                                    <option value="27">김응민(27)</option>
+                                    <option value="114">채상준(114)</option>
+                                    <option value="42">김도환(42)</option>
+                                    <option value="16">이원석(16)</option>
+                                    <option value="32">최영진(32)</option>
+                                    <option value="7">김상수(7)</option>
+                                    <option value="24">백승민(24)</option>
+                                    <option value="53">이학주(53)</option>
+                                    <option value="0">김재현(0)</option>
+                                    <option value="117">김성표(117)</option>
+                                    <option value="8">김호재(8)</option>
+                                    <option value="14">박계범(14)</option>
+                                    <option value="62">공민규(62)</option>
+                                    <option value="31">양우현(31)</option>
+                                    <option value="116">이해승(116)</option>
+                                    <option value="34">김헌곤(34)</option>
+                                    <option value="9">박찬도(9)</option>
+                                    <option value="13">박해민(13)</option>
+                                    <option value="38">김동엽(38)</option>
+                                    <option value="59">최선호(59)</option>
+                                    <option value="55">이성곤(55)</option>
+                                    <option value="5">구자욱(5)</option>
+                                    <option value="3">이현동(3)</option>
+                                    <option value="52">송준석(52)</option>
+                                    <option value="63">윤정빈(63)</option>
+                                    <option value="65">박승규(65)</option>
+                                    <option value="107">정진수(107)</option>
+                                    <option value="6">이성규(6)</option>
+                                    <option value="58">김지찬(58)</option>
+                                    <option value="110">신동수(110)</option>
+                                    <option value="105">김경민(105)</option>
+                                    <option value="68">살라디노(68)</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+
+
+                <div class="joinBtn clearFix">
+                    <ul>
+                        <li class="ok"><a href="#">확인</a></li>
+                        <li class="cancel"><a href="#">취소</a></li>
+                    </ul>
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+
+</body></html>

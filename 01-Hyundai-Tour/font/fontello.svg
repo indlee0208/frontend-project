@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2020 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="gnb_mypage_2" unicode="&#xe801;" d="M500 767c117 0 208-92 208-209 0-116-91-208-208-208s-208 92-208 208c0 117 91 209 208 209z m0 83c-162 0-292-129-292-292 0-162 130-291 292-291s292 129 292 291c0 163-129 292-292 292z m267-558c-21-21-46-38-71-54 121-80 183-213 208-305h-808c25 96 87 230 208 309-25 16-50 33-71 54-175-129-233-354-233-446h1000c0 87-58 317-233 442z" horiz-adv-x="1000" />
+
+<glyph glyph-name="gnb_search_2" unicode="&#xe802;" d="M992-50l-259 258c50 67 80 150 80 238 0 225-184 404-405 404-225 0-408-183-408-404 0-225 183-404 404-404 84 0 163 25 229 71l259-259c4-4 100 96 100 96z m-871 496c0 158 129 287 287 287s288-129 288-287-129-288-288-288c-162 0-287 130-287 288z" horiz-adv-x="1000" />
+
+<glyph glyph-name="hambtn_2" unicode="&#xe803;" d="M1000 600h-1000v167h1000v-167z m0-167h-1000v-166h1000v166z m0-333h-1000v-167h1000v167z" horiz-adv-x="1000" />
+
+<glyph glyph-name="hambtn_close_2" unicode="&#xe804;" d="M1000-25l-383 379 379 384-121 112-379-383-379 383-117-121 379-379-379-379 121-121 379 383 383-379 117 121z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

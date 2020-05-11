@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="찾아오시는 길 &lt; 회사소개 &lt; Metro9">
+    <meta property="og:image" content="images/access_visual.jpg">
+    
+    <title>찾아오시는 길 &lt; 회사소개 &lt; Metro9</title>
+    <link rel="shortcut icon" href="images/metro9_favicon.ico">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/access.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.color-2.1.2.js"></script>
+    <script src="js/common.js"></script>
+    <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=bcfb2c836c0de47314956a942b11f24a"></script>
+    <script src="js/access.js"></script>
+
+</head>
+
+<body>
+
+    <!-- skipMenu -->
+    <ul class="skipMenu">
+        <li><a href="#container">본문 바로가기</a></li>
+        <li><a href="#nav">주 메뉴 바로가기</a></li>
+    </ul>
+
+    <!-- header -->
+    <header>
+        <div class="pcHeadTop">
+            <h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="로고"></a></h1>
+            <nav>
+                <ul id="nav">
+                    <li>
+                        <a href="#">9호선 이용안내</a>
+                        <ul>
+                            <li><a href="#">역/시각표 정보</a></li>
+                            <li><a href="#">운임안내</a></li>
+                            <li><a href="#">시설안내</a></li>
+                            <li><a href="#">유실물센터</a></li>
+                            <li><a href="#">간편지연증명서</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">고객서비스</a>
+                        <ul>
+                            <li><a href="#">고객의 소리</a></li>
+                            <li><a href="#">시민자원봉사</a></li>
+                            <li><a href="#">설문조사</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">알림/소식</a>
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">입찰정보</a></li>
+                            <li><a href="#">자료실</a></li>
+                            <li><a href="#">홍보관</a></li>
+                            <li><a href="#">문화즐기기</a></li>
+                            <li><a href="#">사이버 감사실</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">안전기술</a>
+                        <ul>
+                            <li><a href="#">시민안전가이드</a></li>
+                            <li><a href="#">안전홍보</a></li>
+                            <li><a href="#">공기질관리</a></li>
+                            <li><a href="#">차량소개</a></li>
+                            <li><a href="#">시스템소개</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">회사소개</a>
+                        <ul>
+                            <li><a href="#">서울시메트로9호선㈜</a></li>
+                            <li><a href="access.html">찾아오시는길</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <ul class="gnb">
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="register.html">회원가입</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><button>메뉴전체</button></li>
+            </ul>
+        </div>
+
+        <div class="pcAllMenu">
+            <div class="topWrap">
+                <h1><a href="index.html"><img src="images/logo.png" alt="로고"></a></h1>
+
+                <button>종료</button>
+            </div>
+
+            <div class="scrollWrap">
+                <div class="menuWrap">
+                    <div class="menu clearFix">
+                        <strong>9호선 이용안내</strong>
+                        <ul>
+                            <li><a href="#">역/시각표 정보</a></li>
+                            <li>
+                                <a href="#">운임안내</a>
+                                <ul>
+                                    <li><a href="#">운임제도</a></li>
+                                    <li><a href="#">승차권안내</a></li>
+                                    <li><a href="#">여객운송약관</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">시설안내</a>
+                                <ul>
+                                    <li><a href="#">기본편의시설</a></li>
+                                    <li><a href="#">자전거보관소</a></li>
+                                    <li><a href="#">시설사용신청</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">유실물센터</a>
+                                <ul>
+                                    <li><a href="#">유실물찾기</a></li>
+                                    <li><a href="#">이용안내</a></li>
+                                    <li><a href="#">분실물신고</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">간편지연증명서</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu">
+                        <strong>고객서비스</strong>
+                        <ul>
+                            <li>
+                                <a href="#">고객의 소리</a>
+                                <ul>
+                                    <li><a href="#">작성하기</a></li>
+                                    <li><a href="#">이용안내</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">시민자원봉사</a>
+                                <ul>
+                                    <li><a href="#">이용안내</a></li>
+                                    <li><a href="#">신청하기</a></li>
+                                    <li><a href="#">신청확인</a></li>
+                                    <li><a href="#">확인서 출력</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">설문조사</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu">
+                        <strong>알림/소식</strong>
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li>
+                                <a href="#">입찰정보</a>
+                                <ul>
+                                    <li><a href="#">입찰공고</a></li>
+                                    <li><a href="#">입찰계약절차</a></li>
+                                    <li><a href="#">입점 및 입찰 Q&amp;A</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">자료실</a></li>
+                            <li>
+                                <a href="#">홍보관</a>
+                                <ul>
+                                    <li><a href="#">홍보동영상</a></li>
+                                    <li><a href="#">포토갤러리</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">문화즐기기</a>
+                                <ul>
+                                    <li><a href="#">문화공간정보</a></li>
+                                    <li><a href="#">공연영상</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">사이버 감사실</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu">
+                        <strong>안전기술</strong>
+                        <ul>
+                            <li>
+                                <a href="#">시민안전가이드</a>
+                                <ul>
+                                    <li><a href="#">긴급상황시 행동요령</a></li>
+                                    <li><a href="#">안전설비</a></li>
+                                    <li><a href="#">안전장비 및 사용법</a></li>
+                                    <li><a href="#">지하철이용 안전수칙</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">안전홍보</a>
+                                <ul>
+                                    <li><a href="#">안전홍보 동영상</a></li>
+                                    <li><a href="#">철도안전문화 홍보</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">공기질관리</a></li>
+                            <li>
+                                <a href="#">차량소개</a>
+                                <ul>
+                                    <li><a href="#">열차소개 및 외부특징</a></li>
+                                    <li><a href="#">차량품질 안전자료</a></li>
+                                    <li><a href="#">열차편의시설 및 내부특징</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">시스템소개</a>
+                                <ul>
+                                    <li><a href="#">신호시스템</a></li>
+                                    <li><a href="#">통신시스템</a></li>
+                                    <li><a href="#">AFC시스템</a></li>
+                                    <li><a href="#">전력시스템</a></li>
+                                    <li><a href="#">기계설비시스템</a></li>
+                                    <li><a href="#">시설시스템</a></li>
+                                    <li><a href="#">모의운전시스템</a></li>
+                                    <li><a href="#">안전관리시스템</a></li>
+                                    <li><a href="#">비상대응시스템</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="menu">
+                        <strong>회사소개</strong>
+                        <ul>
+                            <li>
+                                <a href="#">서울시메트로9호선㈜</a>
+                                <ul>
+                                    <li><a href="#">회사소개</a></li>
+                                    <li><a href="#">CEO인사말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">조직안내</a></li>
+                                    <li><a href="#">지속가능경영</a></li>
+                                    <li><a href="#">참여회원사</a></li>
+                                    <li><a href="#">CI소개</a></li>
+                                    <li><a href="#">채용정보</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="access.html">찾아오시는길</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mHeadTop">
+            <div class="mAllMenuBg"></div>
+
+            <div class="mAllMenu">
+                <div class="mAllMenuTop">
+                    <a href="index.html"><img src="images/logo_white.png" alt="로고"></a>
+                    <button>닫기</button>
+                </div>
+
+                <div class="mAllMenuBody">
+                    <ul class="mAllMenuLogin">
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="register.html">회원가입</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+
+                    <ul class="mAllMenuNav">
+                        <li>
+                            <a href="#">9호선 이용안내</a>
+                            <ul>
+                                <li><a href="#">역/시각표 정보</a></li>
+                                <li>
+                                    <a href="#">운임안내</a>
+                                </li>
+                                <li>
+                                    <a href="#">시설안내</a>
+                                </li>
+                                <li>
+                                    <a href="#">유실물센터</a>
+                                </li>
+                                <li><a href="#">간편지연증명서</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">고객서비스</a>
+                            <ul>
+                                <li>
+                                    <a href="#">고객의 소리</a>
+                                </li>
+                                <li>
+                                    <a href="#">시민자원봉사</a>
+                                </li>
+                                <li><a href="#">설문조사</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">알림/소식</a>
+                            <ul>
+                                <li><a href="#">공지사항</a></li>
+                                <li>
+                                    <a href="#">입찰정보</a>
+                                </li>
+                                <li><a href="#">자료실</a></li>
+                                <li>
+                                    <a href="#">홍보관</a>
+                                </li>
+                                <li>
+                                    <a href="#">문화즐기기</a>
+                                </li>
+                                <li><a href="#">사이버 감사실</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">안전기술</a>
+                            <ul>
+                                <li>
+                                    <a href="#">시민안전가이드</a>
+                                </li>
+                                <li>
+                                    <a href="#">안전홍보</a>
+                                </li>
+                                <li><a href="#">공기질관리</a></li>
+                                <li>
+                                    <a href="#">차량소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">시스템소개</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">회사소개</a>
+                            <ul>
+                                <li>
+                                    <a href="#">서울시메트로9호선㈜</a>
+                                </li>
+                                <li><a href="access.html">찾아오시는길</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="mAllMenuLink clearFix">
+                        <li><a href="#">열차이용안내</a></li>
+                        <li><a href="#">유실물센터</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">고객의 소리</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+
+
+
+
+
+
+    <div class="subVisual">
+
+        <h2>찾아오시는 길</h2>
+
+        <div class="pcNav">
+            <ul>
+                <li><a href="#">서울시메트로9호선㈜</a></li>
+                <li class="active"><a href="#">찾아오시는 길</a></li>
+            </ul>
+        </div>
+
+        <div class="mNav">
+            <select>
+                <option value="서울시메트로9호선㈜">서울시메트로9호선㈜</option>
+                <option value="찾아오시는 길" selected>찾아오시는 길</option>
+            </select>
+        </div>
+
+    </div>
+
+
+    <div class="trace">
+        <a href="#" class="home"></a>
+        <a href="#">회사소개</a>
+        <a href="access.html">찾아오시는 길</a>
+    </div>
+
+
+    <div id="container">
+        <div class="contactUs">
+            <div class="address">
+                <strong>Contact Us</strong>
+
+                <ul>
+                    <li>
+                        <span>주소</span>
+                        <span>07505 서울특별시 강서구 개화동로8길 38(개화동)</span>
+                    </li>
+                    <li>
+                        <span>고객지원센터</span>
+                        <span>02-2656-0009</span>
+                    </li>
+                    <li>
+                        <span>팩스</span>
+                        <span>02-2656-0567</span>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="tpt clearFix">
+                <li>
+                    <strong>지하철</strong>
+
+                    <div>
+                        <em class="m9">9호선 개화역</em>
+                        <p>하차 후 바로</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>승용차 및 택시</strong>
+
+                    <div>
+                        <p>
+                            88올림픽 대로 방화대교 부근에서 김포공항 방면으로 직진
+                        </p>
+                    </div>
+
+                    <div>
+                        <p>
+                            강서 방면에서 남부순환로 김포공항 방면
+                        </p>
+                    </div>
+
+                    <div>
+                        <p>
+                            고양, 일산 지역에서 방화대교 남단 김포공항 방면
+                        </p>
+                    </div>
+
+                    <div>
+                        <p>
+                            인천 방면에서 130번 인천국제공항고속도로(고양-인천) 김포공항 방면
+                            <p>
+                    </div>
+                </li>
+                <li>
+                    <strong>버스</strong>
+
+                    <div class="clearFix">
+                        <em class="blue">간선</em>
+                        <span>85-1, 150, 1002, 2, 69, 60, 60-1, 60-2, 88, 9-1, 601, 605</span>
+                    </div>
+                    <div class="clearFix">
+                        <em class="green">지선</em>
+                        <span>6641, 6647, 6631, 6632, 6633</span>
+                    </div>
+                    <div class="clearFix">
+                        <em class="red">광역</em>
+                        <span>9602, 3700</span>
+                    </div>
+                    <div class="clearFix">
+                        <em class="orange">좌석</em>
+                        <span>33, 85, 7, 6, 66, 300</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="map">
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+
+        <div class="pc clearFix">
+
+            <div class="list">
+                <ul>
+                    <li><a href="#">이메일무단수집거부</a></li>
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="access.html">찾아오시는 길</a></li>
+                    <li><a href="#">여객운송약관</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+            </div>
+
+            <div class="familyWrap">
+                <div class="family">
+                    <form class="selectWrap">
+                        <select>
+                            <option value="#">FAMILY SITE</option>
+                            <option value="#">정부민원안내 콜센터</option>
+                            <option value="#">서울시청</option>
+                            <option value="#">서울시 건설섹션 사이트</option>
+                            <option value="#">천만상상 오아시스</option>
+                            <option value="#">한국철도공사</option>
+                            <option value="#">한국철도시설공단</option>
+                            <option value="#">서울교통공사</option>
+                            <option value="#">인천교통공사</option>
+                            <option value="#">대전도시철도공사</option>
+                            <option value="#">대구도시철도공사</option>
+                            <option value="#">광주도시철도공사</option>
+                            <option value="#">부산교통공사</option>
+                            <option value="#">신분당선주식회사</option>
+                            <option value="#">공항철도주식회사</option>
+                            <option value="#">용인경량전철주식회사</option>
+                            <option value="#">의정부경전철주식회사</option>
+                            <option value="#">우이신설경전철주식회사</option>
+                            <option value="#">소사원시운영주식회사</option>
+                            <option value="#">철도안전정보포털</option>
+                            <option value="#">철도산업정보센터</option>
+                        </select>
+                        <input type="submit" value="이동">
+                    </form>
+
+                    <div class="sns">
+                        <a href="#"><img src="images/facebook.png" alt="FACEBOOK"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="copyright">
+                <address>
+                    <p>07505 서울특별시 강서구 개화동로8길 38(개화동) / 고객지원센터 : 02-2656-0009</p>
+                    <p>COPYRIGHT© 2016 Seoul Metro Line9 Corporation ALL RIGHTS RESERVED</p>
+                </address>
+            </div>
+
+            <div class="webmark">
+                <a href="#"><img src="images/wa.png" alt="웹접근성"></a>
+            </div>
+
+        </div>
+
+
+
+        <div class="mobile">
+            <div class="list">
+                <ul>
+                    <li><a href="#">이메일무단수집거부</a></li>
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="access.html">찾아오시는 길</a></li>
+                    <li><a href="#">여객운송약관</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+            </div>
+
+            <div class="snsWebmark">
+                <a href="#"><img src="images/facebook.png" alt="FACEBOOK"></a>
+                <a href="#"><img src="images/wa.png" alt="웹접근성"></a>
+            </div>
+
+            <div class="copyright">
+                <address>
+                    <p>07505 서울특별시 강서구 개화동로8길 38(개화동) / 고객지원센터 : 02-2656-0009</p>
+                    <p>COPYRIGHT© 2016 Seoul Metro Line9 Corporation ALL RIGHTS RESERVED</p>
+                </address>
+            </div>
+
+            <div class="familyWrap">
+                <div class="family">
+                    <form class="selectWrap">
+                        <select>
+                            <option value="#">FAMILY SITE</option>
+                            <option value="#">정부민원안내 콜센터</option>
+                            <option value="#">서울시청</option>
+                            <option value="#">서울시 건설섹션 사이트</option>
+                            <option value="#">천만상상 오아시스</option>
+                            <option value="#">한국철도공사</option>
+                            <option value="#">한국철도시설공단</option>
+                            <option value="#">서울교통공사</option>
+                            <option value="#">인천교통공사</option>
+                            <option value="#">대전도시철도공사</option>
+                            <option value="#">대구도시철도공사</option>
+                            <option value="#">광주도시철도공사</option>
+                            <option value="#">부산교통공사</option>
+                            <option value="#">신분당선주식회사</option>
+                            <option value="#">공항철도주식회사</option>
+                            <option value="#">용인경량전철주식회사</option>
+                            <option value="#">의정부경전철주식회사</option>
+                            <option value="#">우이신설경전철주식회사</option>
+                            <option value="#">소사원시운영주식회사</option>
+                            <option value="#">철도안전정보포털</option>
+                            <option value="#">철도산업정보센터</option>
+                        </select>
+                        <input type="submit" value="이동">
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+
+    <div class="topBtn">
+        <button>TOP</button>
+    </div>
+</body></html>
